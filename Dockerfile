@@ -10,6 +10,7 @@ RUN set -eux \
     && apt-get install -qyy --no-install-recommends --no-install-suggests \
         ca-certificates \
         wget \
+    && rm -rf /var/lib/apt/lists/* /var/log/* \
     \
     && wget -O /usr/local/bin/vpncloud ${VPNCLOUD_URL} \
     && chmod +x /usr/local/bin/vpncloud \
@@ -27,6 +28,11 @@ ENV LISTEN_PORT="3210"
 COPY --from=builder /usr/local/bin/ /usr/local/bin/
 
 RUN set -eux \
+    && apt-get update -qyy \
+    && apt-get install -qyy --no-install-recommends --no-install-suggests \
+        iproute2 \
+    && rm -rf /var/lib/apt/lists/* /var/log/* \
+    \
     && mkdir /etc/vpncloud/ \
     && mkdir /var/log/vpncloud/
 
