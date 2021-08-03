@@ -14,7 +14,6 @@
 <p align="center">
     <img src="https://img.shields.io/docker/v/akafeng/vpncloud?sort=semver" />
     <img src="https://img.shields.io/docker/pulls/akafeng/vpncloud" />
-    <img src="https://img.shields.io/microbadger/layers/akafeng/vpncloud" />
     <img src="https://img.shields.io/docker/image-size/akafeng/vpncloud??sort=semver" />
 </p>
 
